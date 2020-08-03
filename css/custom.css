@@ -1,0 +1,224 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+}
+.wrapper-page {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+.wrapper-page .container {
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fcfcfc4d;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 20px auto;
+}
+.form {
+    width: 100%;
+    padding: 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #EEE;
+    background-color: #FFF;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.editor-with-emojis .wrapper-editor {
+    position: relative;
+}
+.editor-with-emojis .editor-post {
+    font-family: Tahoma, Arial, sans-serif;
+    border-bottom: 2px solid #CCC;
+    padding: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.editor-with-emojis .editor-post + .border {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    background-color: #e61676;
+    width: 0;
+    height: 2px;
+}
+.editor-with-emojis .editor-post:focus + .border {
+    left: 0;
+    width: 100%;
+}
+.editor-with-emojis .viewport-editor {
+    position: relative;
+    padding: 10px 25px;
+}
+.editor-with-emojis .btn-show-emojis {
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 3px;
+    border: 0;
+    outline: 0;
+}
+.form-post .btn-show-emojis img {
+    width: 18px;
+    max-width: 18px;
+    vertical-align: middle;
+    filter: grayscale(0.5);
+}
+.form-post .show-error {
+    font-size: 16px;
+    color: #cc074b;
+    padding: 5px;
+    margin-top: 10px;
+    direction: rtl;
+    text-align: right;
+    display: none;
+}
+.form-post .submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #FFF;
+    border: 1px solid #3498db;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.form-post .submit:focus {
+    outline: 0;
+    background-color: #1779bc;
+    border-color: #1779bc;
+    box-shadow: 0 0 6px 2px rgba(23, 121, 188, 0.4)
+}
+.form-post .submit.disabled {
+    background-color: #999;
+    color: #EEE;
+    pointer-events: none;
+    border: 1px solid #999;
+}
+.form-post .submit .loading {
+    display: inline-block;
+    background-image: url('../images/loading1.gif');
+    background-size: contain;
+    background-position: center center;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+/* Style Posts */
+.show-all-posts .loading {
+    background-image: url('../images/loading1.gif');
+    background-size: contain;
+    background-position: center center;
+    margin: 40px auto;
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+.show-all-posts .post {
+    padding: 10px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    background-color: #FFF;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.show-all-posts .post:last-child {
+    margin-bottom: 0;
+}
+.show-all-posts .post .header {
+    font-size: 13px;
+    padding: 10px;
+    color: #0062ff
+}
+.show-all-posts .post .content {
+    padding: 10px;
+    margin-bottom: 10px;
+    line-height: 20px;
+    font-size: 17px;
+    word-wrap: break-word;
+}
+.show-all-posts .post .content .emojition {
+    display: inline-block;
+    cursor: text;
+    -webkit-user-select: text;
+    user-select: text;
+    margin: 0 1.5px;
+}
+.show-all-posts .post .content .emojition img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.show-all-posts .post .content .emojition .char {
+    width: 0;
+    font-size: 0;
+    overflow: hidden;
+    letter-spacing: 0;
+}
+.show-all-posts .post .footer {
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px solid #DDD;
+}
+.show-all-posts .post .footer > button {
+    width: 100%;
+    margin: 0 5px;
+    border: 0;
+    outline: 0;
+    background-color: #FCFCFC;
+    border: 1px solid #f1f1f1;
+    border-radius: 2px;
+    color: #3375a2;
+    text-align: center;
+    padding: 10px;
+}
+.show-all-posts .post .footer > button:hover {
+    background-color: #f7f7f7;    
+    color: #3498db;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

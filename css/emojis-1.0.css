@@ -1,0 +1,165 @@
+.editor-with-emojis .editor {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    word-wrap: break-word;
+    min-height: 100px;
+    max-height: 600px;
+    overflow-y: auto;
+    position: relative;
+    line-height: 20px;
+}
+.editor-with-emojis .editor:focus {
+    outline: 0;
+}
+.editor-with-emojis .editor[data-direction="rtl"] {
+    direction: rtl !important;
+}
+.editor-with-emojis .editor[data-direction="ltr"] {
+    direction: ltr !important;
+}
+.editor-with-emojis .editor:after {
+    display: block;
+    color: #a7a7a7;
+    position: absolute;
+    top: 10px;
+    z-index: 20;
+}
+.editor-with-emojis .editor[data-direction="rtl"]:after {
+    content: attr(data-placeholder-ar);
+}
+.editor-with-emojis .editor[data-direction="ltr"]:after {
+    content: attr(data-placeholder-en);
+}
+.editor-with-emojis .editor.no-after:after {
+    content: none !important;
+}
+.editor-with-emojis .editor div {
+    width: -webkit-max-content !important;
+    width: max-content !important;
+    max-width: 100%;
+}
+.editor-with-emojis .editor .emoji {
+    font-size: inherit !important;
+    vertical-align: middle !important;
+    letter-spacing: .6em !important;
+    display: inline-block !important;
+    cursor: text !important;
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    height: 2ex !important;
+    width: 2ex !important;
+    min-height: 18px !important;
+    min-width: 18px !important;
+    margin: -.2ex 0.2em .2ex !important;
+    vertical-align: middle !important;
+    max-width: 100% !important;
+}
+/* Start Style Section All Emojis
+***********************************************************************/
+.editor-with-emojis .wrapper-emojis-editor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    width: 300px;
+    height: 380px;
+    border-radius: 6px;
+    border: 1px solid #DDD;
+    z-index: 1001;
+    -webkit-transition: transform 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    display: none;
+}
+
+.editor-with-emojis .wrapper-emojis-editor:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -13px;
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid #DDD;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.editor-with-emojis .wrapper-emojis-editor.ltr:before {right: 20px}
+.editor-with-emojis .wrapper-emojis-editor.rtl:before {left: 20px}
+.editor-with-emojis .wrapper-emojis-editor .content {
+    height: 90%;
+    overflow: hidden;
+}
+.editor-with-emojis .wrapper-emojis-editor .content .table-emojis {
+    width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    background-color: transparent;
+    overflow-y: auto;
+    padding: 15px 25px;
+}
+.editor-with-emojis .wrapper-emojis-editor .content .table-emojis .btn-emoji {
+    border: 0;
+    outline: 0;
+    background-size: 32px 32px;
+    height: 32px;
+    width: 32px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center center;
+    margin: 3px;
+}
+.editor-with-emojis .wrapper-emojis-editor .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5px;
+}
+.editor-with-emojis .wrapper-emojis-editor .footer .btn-category {
+    border: 0;
+    outline: 0;
+    background-size: 17px 17px;
+    height: 17px;
+    width: 17px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center center;
+    padding: 14px;
+    position: relative;
+}
+.editor-with-emojis .wrapper-emojis-editor .footer .btn-category.active {
+    background-color: #DDD;
+}
+.editor-with-emojis .wrapper-emojis-editor .footer .btn-category > .show-content-title {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    background-color: #333;
+    color: #FFF;
+    border-radius: 7px;
+    padding: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    display: none;
+}
+.editor-with-emojis .wrapper-emojis-editor .footer .btn-category > .show-content-title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -6px;
+    left: calc(50% - 6px);
+    border-top: 6px solid #333;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}

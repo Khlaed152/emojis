@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Emojis</title>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/emojis-1.0.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="wrapper-page">
+        <div class="container">
+            <form class="form form-post">
+               <div class="editor-with-emojis" data-lang="ar">
+                    <div class="viewport-editor">
+                        <div class="wrapper-editor">
+                            <div class="editor editor-post" data-direction="rtl" data-placeholder-en="write anything" data-placeholder-ar="اكتب شيئا"></div>
+                            <span class="border"></span>
+                        </div>
+                        <button type="button" class="btn-show-emojis"><img src="images/emojitions/1f603.png" alt="😀"></button>
+                    </div>
+                </div> 
+                <button type="button" tabindex="-1" class="submit disabled">ِAdd Post <span class="loading"></span></button>
+                <div class="show-error"></div>
+            </form>
+            <div class="show-all-posts">
+                <div class="view-posts"></div>
+                <div class="loading"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/jquery-emojis-1.0.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
